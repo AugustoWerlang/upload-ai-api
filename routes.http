@@ -8,20 +8,20 @@ POST http://localhost:3333/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file"; filename="teste2.mp3"
+Content-Disposition: form-data; name="file"; filename="teste.mp3"
 Content-Type: audio/mpeg
 
-< ./teste2.mp3
+< ./teste.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos/6b69d14b-308c-49db-977a-15e32e8fda75/transcription
+POST http://localhost:3333/videos/33a50336-f3e8-4521-ac8a-5d02fe3f7422/transcription
 Content-Type: application/json
 
 {
-  "prompt": "usuarios"
+  "prompt": "nlw, rocketseat, node, prisma, typescript"
 }
 
 ###
@@ -31,7 +31,12 @@ POST http://localhost:3333/ai/complete
 Content-Type: application/json
 
 {
-  "videoId": "6b69d14b-308c-49db-977a-15e32e8fda75",
+  "videoId": "33a50336-f3e8-4521-ac8a-5d02fe3f7422",
   "temperature": 0.5,
-  "template": "Gere um resumo sucinto da transcrição do video informada a seguir: '''{{transcription}}'''"
+  "template": "Gere um resumo sucinto da transcrição do video informada a seguir: '''{transcription}'''"
 }
+
+###
+
+# @name generate-ai-completion
+GET http://localhost:3333/image

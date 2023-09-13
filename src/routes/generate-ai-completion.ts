@@ -19,7 +19,7 @@ export async function generateAICompleationRoute(app: FastifyInstance) {
       }
     })
 
-    if (!video) {
+    if (!video.transcription) {
       return reply.status(400).send({ error: 'Video transcription was not generated yet' })
     }
 
