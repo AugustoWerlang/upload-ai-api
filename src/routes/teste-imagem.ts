@@ -1,3 +1,4 @@
+// Apenas para testes com IA, não faz parte da aplicação :)
 import { FastifyInstance } from "fastify";
 import { openai } from "../lib/openai"
 
